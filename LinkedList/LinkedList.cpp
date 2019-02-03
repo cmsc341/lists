@@ -57,6 +57,9 @@ void LinkedList<T>::remove(int index) {
     // removing front
     if (index == 0) {
         front = front->next;
+        if (back == curr) { //removing only
+            back = nullptr;
+        }
     }
 
     if (index > 0) {
