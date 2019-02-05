@@ -8,7 +8,8 @@
 
 template<typename T>
 LinkedList<T>::LinkedList() {
-
+    head = nullptr;
+    tail = nullptr;
 }
 
 template<typename T>
