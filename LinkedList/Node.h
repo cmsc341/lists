@@ -5,10 +5,14 @@
 #ifndef LISTS_NODE_H
 #define LISTS_NODE_H
 
-#include "LinkedList.h"
 
-template<typename T>
+template <typename T>
 class Node {
+public:
+    Node(T data) : data(data) {
+        next = nullptr;
+    }
+
 public:
     T data;
     Node *next;

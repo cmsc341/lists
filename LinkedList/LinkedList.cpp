@@ -8,8 +8,20 @@
 
 template<typename T>
 LinkedList<T>::LinkedList() {
-    head = nullptr;
-    tail = nullptr;
+
 }
 
+template<typename T>
+void LinkedList<T>::add(T data) {
+    Node<T> * current = new Node<T>(data);
+    if (head == nullptr) {
+        head = current;
+        tail = current;
+    } else {
+        Node<T> * temp = tail;
+        tail = current;
+        temp->next = current;
+    }
+
+}
 #endif

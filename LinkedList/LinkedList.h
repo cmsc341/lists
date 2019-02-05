@@ -5,15 +5,21 @@
 #ifndef LISTS_LINKEDLIST_H
 #define LISTS_LINKEDLIST_H
 
+
 #include "Node.h"
 
 template <typename T>
 class LinkedList {
 public:
     LinkedList();
+
+    void add(T index);
+
 private:
-    Node<T>* head, *tail;
+    Node<T> * head;
+    Node<T> *tail;
 };
 
 #include "LinkedList.cpp"
+
 #endif //LISTS_LINKEDLIST_H
