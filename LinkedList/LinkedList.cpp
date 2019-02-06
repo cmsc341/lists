@@ -23,6 +23,5 @@ void LinkedList<T>::add(T data) {
         tail = current;
         temp->next = current;
     }
-
 }
 #endif
