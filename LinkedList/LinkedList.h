@@ -14,6 +14,12 @@ public:
     LinkedList();
 
     void add(T index);
+    T get(int index);
+    Node<T> * traverse(int index);
+
+    void update(int index, T data);
+
+    void remove(int index);
 
 private:
     Node<T> * head;
