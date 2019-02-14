@@ -29,7 +29,7 @@ int main() {
     cout << "502 " << list.get(50) << endl;
     cout << "501 " << list.get(100) << endl;
     list.remove(0);
-//    cout << "1 " << list.get(0) << endl;
+    cout << "1 " << list.get(0) << endl;
 
 }
 

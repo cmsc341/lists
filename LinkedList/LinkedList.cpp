@@ -57,6 +57,26 @@ void LinkedList<T>::remove(int index) {
     // remove last
     // remove only (first two combined)
     // remove from middle
+    Node<T> * curr = traverse(index);
+
+    Node<T> * previous = nullptr;
+
+    //remove first
+    if( index == 0) {
+       head = head->next;
+    } else {
+       previous =  traverse(index - 1);
+    }
+
+    //remove last
+    if (curr->next == nullptr) {
+        tail = previous;
+    }
+
+    if (previous != nullptr) {
+        previous->next = curr->next;
+        delete curr;
+    }
 }
 
 template<typename T>
