@@ -25,6 +25,10 @@ public:
 
     void insert(int value, int index);
 
+    int get(int index);
+
+    void remove(int index);
+
 private:
     Node * head, * tail;
 };

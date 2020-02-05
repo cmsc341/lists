@@ -58,6 +58,46 @@ void LinkedList::insert(int value, int index) {
     }
 }
 
+int LinkedList::get(int index) {
+    Node * current = head;
+    for (int i = 0; i < index; ++i) {
+        if (current->next == nullptr) {
+            throw range_error("Out of range, nerd.");
+        }
+        current = current->next;
+    }
+    return current->data;
+}
+
+void LinkedList::remove(int index) {
+    if (index == 0) {
+        if (head == nullptr) {
+            throw range_error("WRONG");
+        }
+        Node * toDelete = head;
+        head = head->next;
+        delete toDelete;
+        return;
+    }
+    Node * current = head;
+    Node * prev = nullptr;
+    for (int i = 0; i < index; ++i) {
+        if (current->next == nullptr) {
+            throw range_error("Out of range, nerd.");
+        }
+        prev = current;
+        current = current->next;
+    }
+    if (current == tail) {
+        tail = prev;
+        tail->next = nullptr;
+        delete current;
+    } else {
+        prev->next = current->next;
+        delete current;
+    }
+}
+
 Node::Node(int data) {
     this->data = data;
     this->next = nullptr;
