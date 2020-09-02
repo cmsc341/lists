@@ -6,10 +6,14 @@ using namespace std;
 int main() {
     LinkedList list;
     list.append(3);
-    list.append(5);
-    list.insert(4, 1);
-    cout << "Should be 3, 4, 5" << endl;
-    list.dump();
+    if (list.append(3) == true) {
+        cout << "NOOOOOOOO" << endl;
+    } else {
+        cout << "Test! Pass!" << endl;
+    }
+//    list.insert(4, 1);
+//    cout << "Should be 3, 4, 5" << endl;
+//    list.dump();
 //    list.append(74);
 //    cout << "The item at position 3 is " << list.get(3) << " should be 74" << endl;
 //    if (list.get(3) == 74) {
@@ -18,7 +22,14 @@ int main() {
 //        cout << "Get() failed" << endl;
 //    }
 //    list.remove(2);
-//    cout << "Should be 3, 4, 74" << endl;
-//    list.dump();
+    cout << "Should be 3, 4, 74" << endl;
+    list.dump();
+
+    try {
+        list.insert(-1); //bogus line
+        cout << "Failed!" << endl;
+    } catch range_error {
+        cout << "Passed!" << endl;
+    }
 }
 

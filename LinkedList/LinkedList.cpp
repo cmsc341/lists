@@ -29,29 +29,34 @@ void LinkedList::dump() {
 }
 
 void LinkedList::insert(int value, int index) {
-    // 1. insert at the front
-    Node * node = new Node(value);
-    if (index == 0) {
-        node->next = head;
-        head = node;
-    } else {
-        int i = 0;
-        Node * nodeBeforeSpot = head;
-        while (i < index - 1) {
-            nodeBeforeSpot = nodeBeforeSpot->next;
-            i++;
-        }
-        // Deal with the 3rd case here
-        //  what surgery?
 
-        Node * newNext = nodeBeforeSpot->next;
-        if (newNext == nullptr) {
-            tail = node;
-        }
-        nodeBeforeSpot->next = node;
-        node->next = newNext;
+}
 
+int LinkedList::get(int index) {
+    Node * temp = head;
+    for (int i = 0; i < index; ++i) {
+        // check out of bounds??
+        temp = temp->next;
     }
+    return temp->data;
+}
+
+void LinkedList::remove(int index) {
+    Node * temp = head;
+    for (int i = 0; i < index; ++i) {
+        // check out of bounds
+        temp = temp->next;
+    }
+    if (index == 0) {
+        head = temp->next;
+        delete temp;
+        // remove the first item
+    } else if (temp->next == nullptr) {
+        // remove the last item
+    } else {
+        // remove something in the middle
+    }
+
 }
 
 Node::Node(int value) {
