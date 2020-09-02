@@ -8,8 +8,19 @@
 // Step 8:  Write retrieve operation(s)
 // Step 9:  Test
 // You get the idea
+#include <iostream>
+
+using namespace std;
+
+void segfaultTime();
 
 int main() {
+  segfaultTime();
+}
 
+void segfaultTime() {
+  //  clone address for gl git repo benj1@gl.umbc.edu:/path/to/repo
+  int * p ;
+  cout << *p;
 }
 
