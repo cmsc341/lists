@@ -7,6 +7,17 @@
 
 
 class LinkedList {
+public:
+  LinkedList();
+  ~LinkedList();
+
+
+
+  void append(int value);
+  int get(int index);
+  int insert(int index, int value);
+  int remove(int index);
+  int update(int index, int value);
 
 };
 
